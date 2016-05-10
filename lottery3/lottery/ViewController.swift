@@ -30,6 +30,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collection.backgroundColor = UIColor.whiteColor()
         self.view .addSubview(collection)
         
+        let backgroundImage = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundImage.image = UIImage(named: "background")
+        self.view.insertSubview(backgroundImage, atIndex: 0)
+        
         let headerImage = UIImage(named: "Tittle")
         var headerRect = CGRect(origin: CGPoint(x: 10, y: 0),
                                 size: CGSize(width: self.view.frame.width - 20, height: (self.view.frame.width - 20) * 119 / 884.0))

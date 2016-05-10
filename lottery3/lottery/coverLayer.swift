@@ -2,8 +2,9 @@
 //  coverLayer.swift
 //  lottery
 //
-//  Created by Alan, Edward, Tram, Ardee .
-
+//  Created by chennhuang on 16/4/17.
+//  Copyright © 2016年 lottery. All rights reserved.
+//
 
 import UIKit
 
@@ -136,10 +137,10 @@ class CoverImageView: UIImageView {
         let multiple = Int(CGFloat(imagePiexelWidth) / (image?.size.width)!)
         var okCount = 7500
         if multiple <= 2{
-            okCount = multiple * 35000
+            okCount = multiple * 15000
         }
         else {
-            okCount = multiple * 35000
+            okCount = multiple * 15000
         }
 
 
@@ -167,7 +168,7 @@ class CoverImageView: UIImageView {
         let rect = CGRect(origin: CGPoint(x:0, y: 0), size: self.frame.size)
         coverImage.drawInRect(rect)
         for point in points {
-            let clearRect = CGRect(origin: CGPoint(x: point.getX() - 10, y: point.getY() - 10), size: CGSize(width: 40, height: 40))
+            let clearRect = CGRect(origin: CGPoint(x: point.getX() - 10, y: point.getY() - 10), size: CGSize(width: 10, height: 10))
             CGContextClearRect(UIGraphicsGetCurrentContext(), clearRect);
         }
         
