@@ -2,8 +2,8 @@
 //  coverLayer.swift
 //  lottery
 //
-//  Created by chennhuang on 16/4/17.
-//  Copyright © 2016年 lottery. All rights reserved.
+//  Created by Alan, Edward, Tram, Ardee .
+
 //
 
 import UIKit
