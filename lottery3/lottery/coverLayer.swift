@@ -2,7 +2,11 @@
 //  coverLayer.swift
 //  lottery
 //
+<<<<<<< HEAD
 //  Created by Alan, Edward, Tram, Ardee.
+=======
+//  Created by Alan, Edward, Tram, Ardee .
+>>>>>>> e2ca21aca3fc1a962baa1de5d2858c81ab8334c8
 
 //
 
