@@ -67,7 +67,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         dataArr = [array[Int(arc4random_uniform(6))], array[Int(arc4random_uniform(6))], array[Int(arc4random_uniform(6))],
                    array[Int(arc4random_uniform(6))], array[Int(arc4random_uniform(6))], array[Int(arc4random_uniform(6))],
                    array[Int(arc4random_uniform(6))], array[Int(arc4random_uniform(6))]]
-        //奇怪，上面再加一个参数就会出问题
+        
         dataArr.addObject(array[Int(arc4random_uniform(6))])
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(ViewController.openCard(_:)),
@@ -91,7 +91,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        //返回Cell内容，这里我们使用刚刚建立的defaultCell作为显示内容
+
         let cell:LotteryView  = collection.dequeueReusableCellWithReuseIdentifier("defaultCell", forIndexPath: indexPath) as! LotteryView
         let text:String = String(format: "%d", Int(dataArr[Int(indexPath.item)] as! NSNumber))
         cell.setLabelText(text + "%")
@@ -136,7 +136,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 }
                 
             }
-            let alertView = UIAlertView(title: nil, message: "You won " + String(format: "%d", Int(result)) + " discount", delegate: nil, cancelButtonTitle: "OK")
+            let alertView = UIAlertView(title: nil, message: "Congrats you won " + String(format: "%d", Int(result)) + "% discount", delegate: nil, cancelButtonTitle: "OK")
             alertView.show()
         }
         

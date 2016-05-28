@@ -5,9 +5,11 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate {
 
     var window: UIWindow?
+    
+    let beaconManager = ESTBeaconManager()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -18,7 +20,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         self.window!.rootViewController = viewCtrl
+        self.beaconManager.delegate = self
+        self.beaconManager.requestAlwaysAuthorization()
+        self.beaconManager.startMonitoringForRegion(CLBeaconRegion(
+            proximityUUID: NSUUID(UUIDString: "8492E75F-4FD6-469D-B132-043FE94921D8")!,
+            major: 798, minor: 24035, identifier: "monitored region"))
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(
+            UIUserNotificationSettings(forTypes: .Alert, categories: nil))
         return true
+    }
+    
+    func beaconManager(manager: AnyObject, didEnterRegion region: CLBeaconRegion) {
+        let notification = UILocalNotification()
+        notification.alertBody =
+            "Hi you just pass by a YQ merchant! " +
+            "Play the scratch game to win its discount! " +
+            "Slide this message to play!"
+        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
     }
 
     func applicationWillResignActive(application: UIApplication) {

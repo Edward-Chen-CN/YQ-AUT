@@ -2,7 +2,10 @@
 //  coverLayer.swift
 //  lottery
 //
+
 //  Created by Alan, Edward, Tram, Ardee.
+
+//  Created by Alan, Edward, Tram, Ardee .
 //
 
 import UIKit
