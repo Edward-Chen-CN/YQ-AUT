@@ -2,10 +2,7 @@
 //  coverLayer.swift
 //  lottery
 //
-
 //  Created by Alan, Edward, Tram, Ardee.
-
-//  Created by Alan, Edward, Tram, Ardee .
 //
 
 import UIKit
@@ -113,7 +110,7 @@ class CoverImageView: UIImageView {
             }
         }
         
-        //检查红色的中间区域有多少红色像素点
+        //check how many red pixel in the red area
         let image = self.image
         let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(image!.CGImage))
         let data = CFDataGetBytePtr(pixelData)
