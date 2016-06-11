@@ -108,7 +108,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func onResultBtn(sender: UIButton) {
         if !self.isOpen {
-            let alertView = UIAlertView(title: nil, message: "Please scratch the logo to win discount", delegate: nil, cancelButtonTitle: "OK")
+            let alertView = UIAlertView(title: nil, message: "Please scratch the YQ logo to win discount", delegate: nil, cancelButtonTitle: "OK")
             alertView.show()
         }
         else {
